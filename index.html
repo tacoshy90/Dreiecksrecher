@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+	  	<meta charset="UTF-8">
+	  	<title>Dreiecksrechner</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<link rel="stylesheet" type="text/css" href="style.css">
+	  	<script src="berechnung.js"></script>
+		<script src="dragNdrop.js"></script>
+	</head>	
+	<body>
+		<header data-order="1">
+			<h1>Dreiecksrechner</h1>
+		</header>
+
+		<fieldset id="eingabe" tabindex="0" data-order="2" draggable="true">
+			<legend>Eingabe</legend>
+			<select id="seite">
+				<option value="hypothenuse" selected>Hypothenuse:</option>
+				<option value="gegenkathete">Gegenkathete zu Alpha:</option>
+				<option value="ankathete">Ankathete zu Alpha:</option>
+			</select>
+			<input id="seiten_laenge" type="number" min="0.01" step="0.01" value="25" aria-label="Seitenlänge der zuvor ausgewählten Seite">
+			<span aria-label="Millimeter"><span aria-hidden="true">mm</span></span>
+
+			<label for="winkel-alpha">Winkel <span aria-label="Alpha"><span aria-hidden="true">&alpha;</span></span>:</label>
+			<input id="winkel-alpha" type="number" min="0.01" max="89.99" step="0.01" value="45" aria-label="Eingabefeld für den Winkel Alpha in Grad">
+			<span>°</span>
+
+			<input type="button" value="Berechnung" aria-label="Button um die Berechnung des Dreiecks zu starten">
+		</fieldset>
+
+		<fieldset id="ausgabe" tabindex="0" data-order="3" draggable="true">
+			<legend>Ausgabe</legend>
+
+			<label for="winkel-beta">Winkel <span aria-label="Beta"><span aria-hidden="true">&beta;</span></span>:</label>
+			<output id="winkel-beta" name="winkel-beta" for="seiten_laenge winkel-alpha"></output>
+			<span>°</span>
+
+			<label for="gegenkathete-alpha" data-gegenkathete>Gegegnkathete <span aria-label="Alpha"><span aria-hidden="true">&alpha;</span></span>:</label>
+			<output id="gegenkathete-alpha"  data-gegenkathete name="gegenkathete-alpha" for="seiten_laenge winkel-alpha"></output>
+			<span data-gegenkathete aria-label="Millimeter"><span aria-hidden="true">mm</span></span>
+
+			<label for="ankathete-alpha" data-ankathete>Ankathete <span aria-label="Alpha"><span aria-hidden="true">&alpha;</span></span></label>
+			<output id="ankathete-alpha" data-ankathete name="ankathete-alpha" for="seiten_laenge winkel-alpha"></output>
+			<span data-ankathete aria-label="Millimeter"><span aria-hidden="true">mm</span></span>
+
+			<label for="hypothenuse" data-hypothenuse>Hypothenuse:</label>
+			<output id="hypothenuse" data-hypothenuse name="hypothenuse" for="seiten_laenge winkel-alpha"></output>
+			<span data-hypothenuse aria-label="Millimeter"><span aria-hidden="true">mm</span></span>			
+		</fieldset>
+
+		<fieldset id="grafik" aria-hidden="true" data-order="4" draggable="true">
+			<legend>Grafische Darstellung</legend>
+			<canvas id="graf" aria-label="Grafische Zeichnung des erechneten Dreiecks"></canvas>
+		</fieldset>
+
+		<footer aria-hidden="true" data-order="5">
+			<img src="Logo_gr_tr.jpg" alt="Logo des Berufskolleg für Technik des Märkischen Kreises Lüdenscheid">
+		</footer>		
+	</body>
+</html>
