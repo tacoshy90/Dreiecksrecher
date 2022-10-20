@@ -51,6 +51,7 @@ input {
 	text-align: right;
 }
 
+/* "Berechnen" Button */
 input[type="button"] {
 	grid-column: span 3;
 	font-size: 1.25rem;
