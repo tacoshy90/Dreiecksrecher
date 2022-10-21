@@ -16,7 +16,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
         element.addEventListener('dragend', function(e) {
             this.classList.remove('drag-bg');
-            document.querySelectorAll('[draggable="true"]').forEach(el => el.classList.remove('drag-hover'));
         });
 
         element.addEventListener('drop', function(e) {
