@@ -31,7 +31,7 @@ fieldset {
 
 fieldset:not(#grafik) {
 	display: grid;
-	grid-template-columns: 1fr 4em 1fr;
+	grid-template-columns: 1fr 5em 1fr;
 	gap: 1rem;
 }
 
